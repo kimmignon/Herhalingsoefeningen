@@ -8,7 +8,7 @@ using System.Data;
 
 namespace Herhalingsoefeningen
 {
-    //Klasse voor het ophalen van items uit database "purchases" en voor het toevoegen van itms aan deze database
+    //Klasse voor het ophalen van items uit database "purchases" en voor het toevoegen van items aan deze database
     internal class ItemRepository
     {
         private readonly SqlConnection _connection;
@@ -25,7 +25,7 @@ namespace Herhalingsoefeningen
         public List<Item> GetAllItems()
         {
             using var command = _connection.CreateCommand();
-            command.CommandText = "SELECT [productname ], [quantity] FROM [dbo.Items]";
+            command.CommandText = "SELECT [productname], [quantity] FROM [dbo.Items]";
 
             var items = new List<Item>();
             using var reader = command.ExecuteReader();
